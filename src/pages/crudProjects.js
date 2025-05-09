@@ -5,8 +5,8 @@ import {
 } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 
-// const BASE_URL = "https://cv-bot-backend.onrender.com/projects"; // Replace with your backend URL
-const BASE_URL = "http://localhost:8000/projects"; // Replace with your backend URL
+const BASE_URL = "https://cv-bot-self-backend.onrender.com/projects";  
+// const BASE_URL = "http://localhost:8000/projects"; 
 
 function MyProjectTable() {
   const [projects, setProjects] = useState([]);
@@ -18,7 +18,7 @@ function MyProjectTable() {
   const fetchProjects = async () => {
     const res = await fetch(BASE_URL);
     const data = await res.json();
-    setProjects(data.reverse());
+    setProjects(data);
   };
 
   useEffect(() => {

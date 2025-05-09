@@ -5,8 +5,8 @@ import {
 } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 
-// const BASE_URL = "https://cv-bot-backend.onrender.com/education"; // Adjust if needed
-const BASE_URL = "http://localhost:8000/education"; // Adjust if needed
+const BASE_URL = "https://cv-bot-self-backend.onrender.com/education"; 
+// const BASE_URL = "http://localhost:8000/education"; 
 
 function MyEducationTable() {
   const [educationList, setEducationList] = useState([]);
@@ -18,7 +18,7 @@ function MyEducationTable() {
   const fetchEducation = async () => {
     const res = await fetch(BASE_URL);
     const data = await res.json();
-    setEducationList(data.reverse());
+    setEducationList(data);
   };
 
   useEffect(() => {

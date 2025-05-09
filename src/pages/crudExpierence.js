@@ -5,8 +5,8 @@ import {
 } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 
-// const BASE_URL = "https://cv-bot-backend.onrender.com/experience"; // Replace with your actual backend URL
-const BASE_URL = "http://localhost:8000/experience"; // Replace with your actual backend URL
+const BASE_URL = "https://cv-bot-self-backend.onrender.com/experience"; 
+// const BASE_URL = "http://localhost:8000/experience"; 
 
 function MyExpierenceTable() {
   const [experiences, setExperiences] = useState([]);
@@ -19,7 +19,7 @@ function MyExpierenceTable() {
   const fetchExperiences = async () => {
     const res = await fetch(BASE_URL);
     const data = await res.json();
-    setExperiences(data.reverse());
+    setExperiences(data);
   };
 
   useEffect(() => {

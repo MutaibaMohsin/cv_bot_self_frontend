@@ -5,8 +5,8 @@ import {
 } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 
-// const BASE_URL = "https://cv-bot-backend.onrender.com/achievements"; // Replace with your actual base if different
-const BASE_URL = "http://localhost:8000/achievements"; // Replace with your actual base if different
+const BASE_URL = "https://cv-bot-self-backend.onrender.com/achievements"; // Replace with your actual base if different
+// const BASE_URL = "http://localhost:8000/achievements"; // Replace with your actual base if different
 
 function MyAchviementTable() {
   const [achievements, setAchievements] = useState([]);
@@ -19,7 +19,7 @@ function MyAchviementTable() {
   const fetchAchievements = async () => {
     const res = await fetch(BASE_URL);
     const data = await res.json();
-    setAchievements(data.reverse());
+    setAchievements(data);
   };
 
   useEffect(() => {

@@ -5,8 +5,8 @@ import {
 } from '@mui/material';
 import { Edit, Delete } from '@mui/icons-material';
 
-// const BASE_URL = "https://cv-bot-backend.onrender.com/skills"; // Update as needed
-const BASE_URL = "http://localhost:8000/skills"; 
+const BASE_URL = "https://cv-bot-self-backend.onrender.com/skills"; 
+// const BASE_URL = "http://localhost:8000/skills"; 
 function MySkillTable() {
   const [skills, setSkills] = useState([]);
   const [category, setCategory] = useState('');
