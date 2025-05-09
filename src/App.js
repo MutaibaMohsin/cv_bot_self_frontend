@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AuthButtons from './component/button'
+import Dashboard from './pages/dashboard';
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import MySkillTable from './pages/crudSkills'
+import MyEducationTable from './pages/crudEducation'
+import MyProjectTable from './pages/crudProjects'
+import MyExpierenceTable from './pages/crudExpierence'
+import MyAchviementTable from './pages/crudAchviement'
+import Chatbot from './pages/chatbot'
+import Layout from './component/layout'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AuthButtons />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/curdSkills" element={<MySkillTable />} />
+          <Route path="/curdEducation" element={<MyEducationTable />} />
+          <Route path="/curdProject" element={<MyProjectTable />} />
+          <Route path="/curdExpierence" element={<MyExpierenceTable />} />
+          <Route path="/curdAchviement" element={<MyAchviementTable />} />
+          <Route path="/chatbot" element={<Chatbot />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
