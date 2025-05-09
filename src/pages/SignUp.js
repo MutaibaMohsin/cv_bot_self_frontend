@@ -13,7 +13,7 @@ import {
   Box
 } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
-const BASE_URL = "http://localhost:8000/users/signup";
+const BASE_URL = "https://cv-bot-self-backend.onrender.com/users/signup";
 
 const SignUp = () => {
   const navigate = useNavigate();
